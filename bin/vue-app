@@ -1,0 +1,52 @@
+#!/usr/bin/env node
+'use strict'
+process.env.NODE_PATH = __dirname + '/../node_modules/';
+
+const program = require('commander');
+const commandConfig = require('../config/command');
+const add = require('../command/add');
+const list = require('../command/list');
+const _delete = require('../command/delete');
+const init = require('../command/init');
+
+program.version('1.0.0', '-v', '--version');
+
+program.usage('<command>');
+
+program
+    .command('init <projectName>')
+    .description('Create a new project')
+    .alias('i')
+    .action(projectName => {
+        init(projectName)
+    });
+
+program
+    .command('add <pageName>')
+    .description('Add a new page')
+    .alias('a')
+    .action(pageName => {
+        add(pageName)
+    });
+
+program
+    .command('list')
+    .description('List all the pages')
+    .alias('l')
+    .action(() => {
+        list()
+    });
+
+program
+    .command('delete <pageName>')
+    .description('Delete a page')
+    .alias('d')
+    .action(pageName => {
+        _delete(pageName)
+    });
+
+program.parse(process.argv)
+
+if(!program.args.length){
+    program.help()
+}
