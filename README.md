@@ -1,5 +1,4 @@
 # vue-app-cli
-一个能够让你快速构建基于vue的app多页应用脚手架，可独立开发h5 app或集成到dcloud开发原生app
 
 目前公司使用`dcloud`开发原生app，已经完成了第一款基于`vue.js`和`require.js`的纯`es5`应用的开发。
 
