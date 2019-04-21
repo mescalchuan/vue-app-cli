@@ -1,0 +1,26 @@
+import <%= pageName %> from "@/components/<%= pageName %>/index";
+import Child1 from '@/components/<%= pageName %>/childs/child1'
+import Child2 from '@/components/<%= pageName %>/childs/child2'
+import VueRouter from 'vue-router'
+//使用阿里flexible解决方案
+import 'amfe-flexible';
+
+Vue.use(VueRouter)
+
+const routes = [{
+  path: '/<%= pageName %>/child1', 
+  component: Child1
+}, {  
+  path: '/<%= pageName %>/child2',
+  component: Child2
+}]
+
+const router = new VueRouter({
+  routes
+})
+
+new Vue({
+  el: '#app',
+  router,
+  components: { <%= pageName %> }
+});

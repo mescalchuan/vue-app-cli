@@ -6,12 +6,17 @@ const path = require('path');
 const ora = require('ora');
 const utils = require('../config/utils');
 
-module.exports = (pageName) => {
+module.exports = (pageName, vr) => {
     co(function*() {
         //读取模板文件
-        const entryEJS = fs.readFileSync(path.resolve(__dirname, '../template/entry.ejs'), 'utf-8');
-        const htmlEJS = fs.readFileSync(path.resolve(__dirname, '../template/html.ejs'), 'utf-8');
-        const componentEJS = fs.readFileSync(path.resolve(__dirname, '../template/component.ejs'), 'utf-8');
+        const vrPath = vr ? 'routerT/' : ''
+        const entryEJS = fs.readFileSync(path.resolve(__dirname, `../template/${vrPath}entry.ejs`), 'utf-8');
+        const htmlEJS = fs.readFileSync(path.resolve(__dirname, `../template/${vrPath}html.ejs`), 'utf-8');
+        const componentEJS = fs.readFileSync(path.resolve(__dirname, `../template/${vrPath}component.ejs`), 'utf-8');
+        if(vr) {
+            const child1Vue = fs.readFileSync(path.resolve(__dirname, '../template/routerT/childs/child1.vue'), 'utf-8');
+            const child2Vue = fs.readFileSync(path.resolve(__dirname, '../template/routerT/childs/child2.vue'), 'utf-8');
+        }
         //参数获取新建container名字并转换成驼峰
         const containerName = utils.toHump(pageName);
         const labelName = utils.toLine(containerName);
@@ -20,6 +25,10 @@ module.exports = (pageName) => {
         const destinationPageHTML = `./pages/${containerName}.html`;
         const destinationComponent = `./components/${containerName}`;
         const destinationComponentVue = `./components/${containerName}/index.vue`;
+        if(vr) {
+            const destinationRouterChild1 = `./components/${containerName}/childs/child1.vue`;
+            const destinationRouterChild2 = `./components/${containerName}/childs/child2.vue`;
+        }
         //渲染模板文件
         const entryResult = ejs.render(entryEJS, {pageName: containerName});
         const htmlResult = ejs.render(htmlEJS, {pageName: containerName, labelName});
@@ -48,6 +57,10 @@ module.exports = (pageName) => {
             fs.writeFileSync(destinationEntryJS, entryResult);
             fs.writeFileSync(destinationPageHTML, htmlResult);
             fs.writeFileSync(destinationComponentVue, componentResult);
+            if(vr) {
+                fs.writeFileSync(destinationRouterChild1, child1Vue);
+                fs.writeFileSync(destinationRouterChild2, child2Vue);
+            }
         }
         catch(err) {
             spinner.stop();

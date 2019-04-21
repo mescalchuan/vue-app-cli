@@ -1,0 +1,37 @@
+<template>
+	<div>
+		<header>{{pageName}}</header>
+		<div class="<%= pageName %>-container flex flex-column justify-center align-center">
+			<p>This is the <span>{{pageName}}</span> page.</p>
+			<router-link to="/<%= pageName/child1 %>">Go to Child1</router-link>
+			<router-link to="/<%= pageName/child2 %>">Go to Child2</router-link>
+			<router-view/>
+		</div>
+	</div>
+</template>
+
+<script>
+export default {
+	name: "<%= pageName %>",
+	data() {
+		return {
+			pageName: "<%= pageName %>"
+		}
+	}
+}
+</script>
+
+<style lang="scss" scoped>
+.<%= pageName %>-container {
+	padding-top: 50px;
+	height: 100vh;
+	p {
+		font-size: 20px;
+		color: #333333;
+		text-align: center;
+		span {
+			color: #68b1ed;
+		}
+	}
+}
+</style>
