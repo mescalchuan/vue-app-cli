@@ -3,8 +3,8 @@
 		<header>{{pageName}}</header>
 		<div class="<%= pageName %>-container flex flex-column justify-center align-center">
 			<p>This is the <span>{{pageName}}</span> page.</p>
-			<router-link to="/<%= pageName/child1 %>">Go to Child1</router-link>
-			<router-link to="/<%= pageName/child2 %>">Go to Child2</router-link>
+			<router-link to="/child1">Go to Child1</router-link>
+			<router-link to="/child2">Go to Child2</router-link>
 			<router-view/>
 		</div>
 	</div>
@@ -32,6 +32,9 @@ export default {
 		span {
 			color: #68b1ed;
 		}
+	}
+	a {
+		font-size: 18px;
 	}
 }
 </style>

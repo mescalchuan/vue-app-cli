@@ -3,8 +3,8 @@
     "vue-app": "bin/vue-app"
   },
   "name": "vue-app-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "新增屏幕适配方案",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

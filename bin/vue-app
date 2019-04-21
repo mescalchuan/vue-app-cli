@@ -23,10 +23,10 @@ program
 
 program
     .command('add <pageName>')
-    .option('-vr, --vuerouter', 'use vue-router page')
+    .option('-r, --vuerouter', 'use vue-router page')
     .description('Add a new page, use -vr to add a vue-router-page')
     .alias('a')
-    .action(pageName => {
+    .action((pageName, cmd) => {
         add(pageName, cmd.vuerouter ? 'vr' : '')
     });
 

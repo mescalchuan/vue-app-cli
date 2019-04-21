@@ -7,3 +7,9 @@
         
     }
 </script>
+
+<style scoped>
+    div {
+        font-size: 25px;
+    }
+</style>
