@@ -1,11 +1,15 @@
-import <%= pageName %> from "@/components/<%= pageName %>/index";
+import <%= pageName %> from "@/components/<%= pageName %>/index"
 import Child1 from '@/components/<%= pageName %>/childs/child1'
 import Child2 from '@/components/<%= pageName %>/childs/child2'
 import VueRouter from 'vue-router'
 //使用阿里flexible解决方案
-import 'amfe-flexible';
+import 'amfe-flexible'
+//VConsole
+import VConsole from 'vconsole'
 
 Vue.use(VueRouter)
+
+const vconsole = new VConsole()
 
 const routes = [{
   path: '/child1', 
