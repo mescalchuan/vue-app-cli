@@ -2,7 +2,7 @@
 
 ### 一个能够让你快速构建基于`vue`的`app`多页应用脚手架，可独立开发`h5 app`或集成到`hbuilder`开发原生应用。
 
-### [文档地址](https://1335382915.github.io/vue-app-cli)
+### [文档地址](https://mescalchuan.github.io/vue-app-cli)
 
 #### vue-cli
 之所以不使用官方的`vue-cli`构建应用是因为：
