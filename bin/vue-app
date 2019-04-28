@@ -9,7 +9,7 @@ const list = require('../command/list');
 const _delete = require('../command/delete');
 const init = require('../command/init');
 
-program.version('1.0.0', '-v', '--version');
+program.version('1.4.0', '-v', '--version');
 
 program.usage('<command>');
 
