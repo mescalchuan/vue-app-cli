@@ -1,5 +1,7 @@
 ![](https://upload-images.jianshu.io/upload_images/1495096-1d5b56057c3a3840.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+![](https://upload-images.jianshu.io/upload_images/1495096-d641008ec0fb3024.gif?imageMogr2/auto-orient/strip)
+
 ### 一个能够让你快速构建基于`vue`的`app`多页应用脚手架，可独立开发`h5 app`或集成到`hbuilder`开发原生应用。
 
 ### [文档地址](https://mescalchuan.github.io/vue-app-cli)
